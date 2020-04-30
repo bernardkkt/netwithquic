@@ -4,6 +4,7 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
   <script src="script.js"></script>
   <title>Configuration Generator</title>
+
   <body>
     <section class="mainbar">
       <h1>Configuration Generator</h1>
@@ -16,13 +17,45 @@
       </p>
     </section>
     <section>
-      <div id="serverform">
+      <div class="form" id="serverform">
         <h2>Form for server</h2>
+        <label for="port">Port number: </label><input id="port" type="number"><br>
+        <label for="id">User UUID: </label><input id="id" type="text"><br>
+        <label for="alterId">Alternative ID: </label><input id="alterId" type="number"><br>
+        <label for="enc">Encryption: </label>
+        <select id="enc">
+          <option value="none">None</option>
+          <option value="aes-128-gcm">aes-128-gcm</option>
+          <option value="chacha20-poly1305">chacha20-poly1305</option>
+        </select>
+        <br>
+        <label for="key">Key: </label><input id="key" type="text"><br>
       </div>
-      <div id="clientform">
+      <div class="form" id="clientform">
         <h2>Form for client</h2>
+        <label for="haddr">Host address/IP: </label><input id="haddr" type="text"><br>
+        <label for="hport">Port number: </label><input id="hport" type="number"><br>
+        <label for="hid">User UUID: </label><input id="hid" type="text"><br>
+        <label for="haid">Alternative ID: </label><input id="haid" type="number"><br>
+        <label for="henc">Encryption: </label>
+        <select id="enc">
+          <option value="none">None</option>
+          <option value="aes-128-gcm">aes-128-gcm</option>
+          <option value="chacha20-poly1305">chacha20-poly1305</option>
+        </select><br>
+        <label for="hkey">Key: </label><input id="hkey" type="text"><br>
+        <label for="dns">DNS: </label><input id="dns" type="text"><br>
+        <label for="adb">Ad-blocking: </label>
+        <select id="adb">
+          <option value="server">Yes</option>
+          <option value="client">No</option>
+        </select>
+        <br>
+      </div>
+      <div class="stdout" id="stdout">
       </div>
     </section>
   </body>
 
 </html>
+
