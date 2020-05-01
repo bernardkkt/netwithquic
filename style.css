@@ -1,36 +1,31 @@
-* {
-  font-family: Verdana, Geneva, sans-serif;
-  background-color: #702A2A;
-}
-
-.mainbar {
-  font-style: normal;
-  color: #FFDEAD;
-  text-shadow: 2px 2px #333333;
-  text-align: center;
-}
-
 section {
+  padding: 0;
   margin: auto;
-  width: 100%;
-  max-width: 720px;
-}
-
-select {
-  border-style: solid;
-  border-radius: 6px;
-  padding: 5px 5px;
-  text-align-last: center;
-  text-shadow: 2px 2px #333333;
-  color: #FFDEAD;
-}
-
-h1 {
+  overflow: auto;
+  min-width: 400px;
   text-align: center;
+  font-family: Verdana, Geneva, sans-serif;
 }
 
-h2 {
-  color: #EAAEAA;
-  font-size: 18px;
-  text-shadow: 2px 2px #333333;
+.submit {
+  margin: auto;
+  padding: 10px;
+}
+
+.form label {
+  width: 30%;
+  float: left;
+  text-align: right;
+}
+
+.form input {
+  width: 42%;
+  margin-left: 10px;
+  float: left;
+}
+
+.form select {
+  width: 42%;
+  margin-left: 10px;
+  float: left;
 }

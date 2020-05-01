@@ -8,17 +8,16 @@
   <body>
     <section class="mainbar">
       <h1>Configuration Generator</h1>
-      <p>
-        <label for="type">Generate configuration for: </label>
-        <select id="type">
-          <option value="server">server</option>
-          <option value="client">client</option>
-        </select>
-      </p>
+      <label for="type">Generate configuration for: </label>
+      <select id="type" onchange="switchForm()">
+        <option value="server">server</option>
+        <option value="client">client</option>
+      </select>
     </section>
     <section>
       <div class="form" id="serverform">
         <h2>Form for server</h2>
+        <p></p>
         <label for="port">Port number: </label><input id="port" type="number"><br>
         <label for="id">User UUID: </label><input id="id" type="text"><br>
         <label for="alterId">Alternative ID: </label><input id="alterId" type="number"><br>
@@ -54,6 +53,11 @@
       </div>
       <div class="stdout" id="stdout">
       </div>
+    </section>
+    <section>
+      <p>
+        <button onclick="submit()">Submit</button>
+      </p>
     </section>
   </body>
 
