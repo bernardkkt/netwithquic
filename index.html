@@ -18,9 +18,9 @@
       <div class="form" id="serverform">
         <h2>Form for server</h2>
         <p></p>
-        <label for="port">Port number: </label><input id="port" type="number"><br>
-        <label for="id">User UUID: </label><input id="id" type="text"><br>
-        <label for="alterId">Alternative ID: </label><input id="alterId" type="number"><br>
+        <label for="port">Port number: </label><input required step=1 min=1 max=65535 id="port" type="number"><br>
+        <label for="id">User UUID: </label><input required id="id" type="text"><br>
+        <label for="alterId">Alternative ID: </label><input required step=1 min=0 max=65535 id="alterId" type="number"><br>
         <label for="enc">Encryption: </label>
         <select id="enc">
           <option value="none">None</option>
@@ -32,12 +32,12 @@
       </div>
       <div class="form" id="clientform">
         <h2>Form for client</h2>
-        <label for="haddr">Host address/IP: </label><input id="haddr" type="text"><br>
-        <label for="hport">Port number: </label><input id="hport" type="number"><br>
-        <label for="hid">User UUID: </label><input id="hid" type="text"><br>
-        <label for="haid">Alternative ID: </label><input id="haid" type="number"><br>
+        <label for="haddr">Host address/IP: </label><input required id="haddr" type="text"><br>
+        <label for="hport">Port number: </label><input required step=1 min=1 max=65535 id="hport" type="number"><br>
+        <label for="hid">User UUID: </label><input required id="hid" type="text"><br>
+        <label for="haid">Alternative ID: </label><input required step=1 min=0 max=65535 id="haid" type="number"><br>
         <label for="henc">Encryption: </label>
-        <select id="enc">
+        <select id="henc">
           <option value="none">None</option>
           <option value="aes-128-gcm">aes-128-gcm</option>
           <option value="chacha20-poly1305">chacha20-poly1305</option>
@@ -46,18 +46,19 @@
         <label for="dns">DNS: </label><input id="dns" type="text"><br>
         <label for="adb">Ad-blocking: </label>
         <select id="adb">
-          <option value="server">Yes</option>
-          <option value="client">No</option>
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
         </select>
         <br>
-      </div>
-      <div class="stdout" id="stdout">
       </div>
     </section>
     <section>
       <p>
         <button onclick="submit()">Submit</button>
       </p>
+    </section>
+    <section>
+      <div id="stdout">Your result shows here</div>
     </section>
   </body>
 
