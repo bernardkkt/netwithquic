@@ -16,4 +16,15 @@ $ docker build -t "netwithquic" https://github.com/bernardkkt/netwithquic.git
 ```
 
 ### Usage
+#### For server
+1. Create a file named `config.json` in a folder.
+2. Visit to [this page](https://bernardkkt.github.io/netwithquic/) to generate the content for `config.json`.
+    1. Choose **server** for **Generate configuration for**.
+    2. Enter a port number you would like to use for listening to incoming connection from the client.
+    3. Enter a UUID string. You can generate one from [here](https://uuidgen.org/v/4).
+    4. Choose a value between 0-65535 for **Alternative ID**. The recommended value is 4. See **alterId** under [here](https://v2ray.com/en/configuration/protocols/vmess.html#userobject) for more information.
+    5. It is recommended to set up the encryption setting. If you choose **None**, the **Key** field will be ignored. Otherwise, if you don't enter a key, the selection you have made for **Encryption** will be treated as **None**.
+    6. Press the submit button, copy the output to `config.json` and save it.
+
+#### For client
 TBA
