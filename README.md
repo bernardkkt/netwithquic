@@ -24,7 +24,11 @@ $ docker build -t "netwithquic" https://github.com/bernardkkt/netwithquic.git
     3. Enter a UUID string. You can generate one from [here](https://uuidgen.org/v/4).
     4. Choose a value between 0-65535 for **Alternative ID**. The recommended value is 4. See **alterId** under [here](https://v2ray.com/en/configuration/protocols/vmess.html#userobject) for more information.
     5. It is recommended to set up the encryption setting. If you choose **None**, the **Key** field will be ignored. Otherwise, if you don't enter a key, the selection you have made for **Encryption** will be treated as **None**.
-    6. Press the submit button, copy the output to `config.json` and save it.
+    6. Press the submit button and copy the output to `config.json`.
+3. Save `config.json` with the new content.
+4. Run the following command to start the server:
+`docker run -v -p 0.0.0.0:$PORT:$PORT $PWD:/etc/v2ray netwithquic`
+where $PORT refers to the selected port number above, and $PWD refers to the folder path that contains `config.json`.
 
 #### For client
 TBA
