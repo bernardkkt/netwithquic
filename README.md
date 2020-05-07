@@ -27,8 +27,10 @@ $ docker build -t "netwithquic" https://github.com/bernardkkt/netwithquic.git
     6. Press the submit button and copy the output to `config.json`.
 3. Save `config.json` with the new content.
 4. Run the following command to start the server:
-`docker run -v -p 0.0.0.0:$PORT:$PORT $PWD:/etc/v2ray netwithquic`
-where $PORT refers to the selected port number above, and $PWD refers to the folder path that contains `config.json`.
+   ```
+   docker run -v -p 0.0.0.0:$PORT:$PORT $PWD:/etc/v2ray netwithquic
+   ```
+   where $PORT refers to the selected port number above, and $PWD refers to the folder path that contains `config.json`.
 
 #### For client
 TBA
