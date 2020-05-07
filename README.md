@@ -30,7 +30,7 @@ $ docker build -t "netwithquic" https://github.com/bernardkkt/netwithquic.git
    ```
    docker run -v -p 0.0.0.0:$PORT:$PORT $PWD:/etc/v2ray netwithquic
    ```
-   where $PORT refers to the selected port number above, and $PWD refers to the folder path that contains `config.json`.
+   where `$PORT` refers to the selected port number above, and `$PWD` refers to the folder path that contains `config.json`.
 
 #### For client
 TBA
