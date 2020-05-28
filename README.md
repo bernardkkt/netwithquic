@@ -28,7 +28,7 @@ Successful execution of the command above will create a Docker image named **net
 3. Save `config.json` with the new content.
 4. Run the following command to start the server:
    ```
-   $ docker run -v -p 0.0.0.0:$PORT:$PORT $PWD:/etc/v2ray netwithquic
+   $ docker run -v $PWD:/etc/v2ray -p 0.0.0.0:$PORT:$PORT netwithquic
    ```
    where `$PORT` refers to the selected port number above, and `$PWD` refers to the folder path that contains `config.json`.
 
@@ -47,7 +47,7 @@ Successful execution of the command above will create a Docker image named **net
 3. Save `config.json` with the new content.
 4. Run the following command to start the client:
    ```
-   $ docker run -v -p 0.0.0.0:$SOCKS_PORT:1080 $PWD:/etc/v2ray netwithquic
+   $ docker run -v $PWD:/etc/v2ray -p 0.0.0.0:$SOCKS_PORT:1080 netwithquic
    ```
    where `$SOCKS_PORT` refers to the port number you wish the SOCKS proxy to be hosted at, and `$PWD` refers to the folder path that contains `config.json`.
 5. Now you can access **netwithquic** through the SOCKS proxy at `127.0.0.1` with the port number `$SOCKS_PORT` by adding the proxy settings to your applications.
