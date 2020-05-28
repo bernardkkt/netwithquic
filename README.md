@@ -4,20 +4,19 @@ Access the internet with QUIC technology
 ## Introduction
 **netwithquic** is a project aims to transmit all network packets via QUIC protocol across the internet. According to [The Chromium Projects](https://www.chromium.org/quic), QUIC is a new transport protocol developed by Google, and it is implemented on top of UDP (see link for more details). This project uses [Project V](https://github.com/v2ray/v2ray-core) in a Docker container, which is intended to run on the client and the server during runtime. The server receives incoming packets from the Project V client in QUIC and redirects them to their corresponding destinations. When the destinations respond to the server, the server forwards the packets back to the Project V client in QUIC. The type of the QUIC protocol used by Project V is IETF QUIC [[1](https://www.v2ray.com/en/configuration/transport/quic.html)].
 
-## Usage
-### Prerequisite
+## Prerequisite
 * [Docker](https://docs.docker.com/engine/install/)
 * Active internet connection
 
-### Installation
+## Installation
 Run the following code on your terminal/command prompt of your server/client:
 ```bash
 $ docker build -t "netwithquic" https://github.com/bernardkkt/netwithquic.git
 ```
 Successful execution of the command above will create a Docker image named **netwithquic** on your system. Essentially the image provides the Project V software on top of the Alpine Linux base image. Alternatively, you can choose to install the [official Project V image](https://hub.docker.com/r/v2ray/official), but that would require you to modify the parameters accordingly for the rest of the commands.
 
-### Usage
-#### For server
+## Usage
+### For server
 1. Create a file named `config.json` in a folder.
 2. Visit to [this page](https://bernardkkt.github.io/netwithquic/) to generate the content for `config.json`.
     1. Choose **server** for **Generate configuration for**.
@@ -33,7 +32,7 @@ Successful execution of the command above will create a Docker image named **net
    ```
    where `$PORT` refers to the selected port number above, and `$PWD` refers to the folder path that contains `config.json`.
 
-#### For client
+### For client
 1. Create a file named `config.json` in a folder.
 2. Visit to [this page](https://bernardkkt.github.io/netwithquic/) to generate the content for `config.json`.
     1. Choose **client** for **Generate configuration for**.
