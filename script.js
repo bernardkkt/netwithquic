@@ -33,9 +33,9 @@ function submit() {
       // Enough data to proceed
       itemsObj.isServer = false
       itemsObj.addr = haddr.value
-      itemsObj.port = hport.value
+      itemsObj.port = parseInt(hport.value)
       itemsObj.uuid = hid.value
-      itemsObj.aid = haid.value
+      itemsObj.aid = parseInt(haid.value)
 
       if (henc.selectedIndex && hkey.value.length !== 0) {
         // Enable encryption
@@ -68,9 +68,9 @@ function submit() {
     if (port.validity.valid && id.validity.valid && alterId.validity.valid) {
       // Enough data to proceed
       itemsObj.isServer = true
-      itemsObj.port = port.value
+      itemsObj.port = parseInt(port.value)
       itemsObj.uuid = id.value
-      itemsObj.aid = alterId.value
+      itemsObj.aid = parseInt(alterId.value)
 
       if (enc.selectedIndex && key.value.length !== 0) {
         // Enable encryption
