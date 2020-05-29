@@ -28,7 +28,7 @@ Successful execution of the command above will create a Docker image named **net
 3. Save `config.json` with the new content.
 4. Run the following command to start the server:
    ```
-   $ docker run -v $PWD:/etc/v2ray -p 0.0.0.0:$PORT:$PORT netwithquic
+   $ docker run -v $PWD:/etc/v2ray -p 0.0.0.0:$PORT:$PORT/udp netwithquic
    ```
    where `$PORT` refers to the selected port number above, and `$PWD` refers to the folder path that contains `config.json`.
 
