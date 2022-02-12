@@ -24,8 +24,8 @@ Successful execution of the command above will create a Docker image named **net
     3. Enter a UUID string. You can generate one from [here](https://uuidgen.org/v/4).
     4. Choose a value between 0-65535 for **Alternative ID**. The recommended value is 4. See **alterId** under [here](https://v2ray.com/en/configuration/protocols/vmess.html#userobject) for more information.
     5. It is recommended to set up the encryption setting. If you choose **None**, the **Key** field will be ignored. Otherwise, if you don't enter a key, the selection you have made for **Encryption** will be treated as **None**.
-    6. Press the submit button and copy the output to `config.json`.
-3. Save `config.json` with the new content.
+    6. Press the submit button and copy the JSON output.
+3. Paste the copied content into `config.json` and save it.
 4. Run the following command to start the server:
    ```
    $ docker run -v $PWD:/etc/v2ray -p 0.0.0.0:$PORT:$PORT/udp netwithquic
@@ -43,8 +43,8 @@ Successful execution of the command above will create a Docker image named **net
     6. Fill in the encryption method and the key if they are defined in the server configuration.
     7. (Optional) Enter a DNS IP address if you wish to customise the DNS service for resolving hostnames within Project V.
     8. (Optional) You may choose to enable the ad-blocking feature.
-    9. Press the submit button and copy the output to `config.json`.
-3. Save `config.json` with the new content.
+    9. Press the submit button and copy the JSON output.
+3. Paste the copied content into `config.json` and save it.
 4. Run the following command to start the client:
    ```
    $ docker run -v $PWD:/etc/v2ray -p 0.0.0.0:$SOCKS_PORT:1080 netwithquic
