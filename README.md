@@ -11,18 +11,19 @@ Access the internet with QUIC technology
 ## Installation
 Run the following code on your terminal/command prompt of your server/client:
 ```bash
-$ docker build -t "netwithquic" https://github.com/bernardkkt/netwithquic.git
+$ docker build --no-cache -t "netwithquic" https://github.com/bernardkkt/netwithquic.git
 ```
 Successful execution of the command above will create a Docker image named **netwithquic** on your system. Essentially the image provides the Project V software on top of the Alpine Linux base image. Alternatively, you can choose to install the [official Project V image](https://hub.docker.com/r/v2ray/official), but that would require you to modify the parameters accordingly for the rest of the commands.
 
 ## Usage
 ### For server
+0. Synchronise the system time with an NTP server.
 1. Create a file named `config.json` in a folder.
 2. Visit to [this page](https://bernardkkt.github.io/netwithquic/) to generate the content for `config.json`.
     1. Choose **server** for **Generate configuration for**.
     2. Enter a port number you would like to use for listening to incoming connection from the client.
     3. Enter a UUID string. You can generate one from [here](https://uuidgen.org/v/4).
-    4. Choose a value between 0-65535 for **Alternative ID**. The recommended value is 4. See **alterId** under [here](https://v2ray.com/en/configuration/protocols/vmess.html#userobject) for more information.
+    4. ~~Choose a value between 0-65535 for **Alternative ID**. The recommended value is 4. See **alterId** under [here](https://v2ray.com/en/configuration/protocols/vmess.html#userobject) for more information.~~ Set **Alternative ID** to 0. See [here](https://github.com/v2fly/v2ray-core/issues/1564#issuecomment-1018581127).
     5. It is recommended to set up the encryption setting. If you choose **None**, the **Key** field will be ignored. Otherwise, if you don't enter a key, the selection you have made for **Encryption** will be treated as **None**.
     6. Press the submit button and copy the JSON output.
 3. Paste the copied content into `config.json` and save it.
@@ -33,6 +34,7 @@ Successful execution of the command above will create a Docker image named **net
    where `$PORT` refers to the selected port number above, and `$PWD` refers to the folder path that contains `config.json`.
 
 ### For client
+0. Synchronise the system time with an NTP server.
 1. Create a file named `config.json` in a folder.
 2. Visit to [this page](https://bernardkkt.github.io/netwithquic/) to generate the content for `config.json`.
     1. Choose **client** for **Generate configuration for**.
